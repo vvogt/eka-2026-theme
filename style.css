@@ -1,0 +1,28 @@
+:root {
+    --primary-100: #EAF2FF;
+    --primary-200: #D6E5FF;
+    --primary-500: #002F78;
+    --white: #FFFFFF;
+}
+
+.content-container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+body {
+    background-color: var(--primary-100);
+}
+
+.top-bar {
+    background-color: var(--white);
+    border-radius: 0 0 70px 70px;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}

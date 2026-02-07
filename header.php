@@ -17,6 +17,24 @@
 
 <header>
     
+    <div class="top-bar content-container">
 
+        <a href="<?php echo get_home_url(); ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/medendi_logo.svg">
+        </a>
+
+        <nav class="top-bar-nav">
+            <ul>
+                <li><a href="#">Teenused</a></li>
+                <li><a href="#">Patsiendile</a></li>
+                <li><a href="#">Meist</a></li>
+            </ul>
+        </nav>
+
+        <a href="#">
+            Võta ühendust
+        </a>
+
+    </div>
 
 </header>
