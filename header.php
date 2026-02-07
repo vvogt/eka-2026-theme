@@ -23,8 +23,8 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/medendi_logo.svg">
         </a>
 
-        <nav class="top-bar-nav">
-            <ul>
+        <nav>
+            <ul class="top-bar-nav-menu">
                 <li><a href="#">Teenused</a></li>
                 <li><a href="#">Patsiendile</a></li>
                 <li><a href="#">Meist</a></li>
