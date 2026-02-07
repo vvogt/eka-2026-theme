@@ -5,7 +5,9 @@ get_header();
 ?>
 
 <main>
-    index.php sisu
+    <button class="btn btn-secondary">
+        Nupp
+    </button>
 </main>
 
 <?php

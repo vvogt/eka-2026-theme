@@ -17,23 +17,27 @@
 
 <header>
     
-    <div class="top-bar content-container">
+    <div class="content-container top-bar-container">
 
-        <a href="<?php echo get_home_url(); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/medendi_logo.svg">
-        </a>
+        <div class="top-bar">
 
-        <nav>
-            <ul class="top-bar-nav-menu">
-                <li><a href="#">Teenused</a></li>
-                <li><a href="#">Patsiendile</a></li>
-                <li><a href="#">Meist</a></li>
-            </ul>
-        </nav>
+            <a href="<?php echo get_home_url(); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/medendi_logo.svg">
+            </a>
 
-        <a href="#">
-            Võta ühendust
-        </a>
+            <nav>
+                <ul class="top-bar-nav-menu">
+                    <li><a href="#">Teenused</a></li>
+                    <li><a href="#">Patsiendile</a></li>
+                    <li><a href="#">Meist</a></li>
+                </ul>
+            </nav>
+
+            <a href="#" class="btn">
+                Võta ühendust
+            </a>
+
+        </div>
 
     </div>
 
