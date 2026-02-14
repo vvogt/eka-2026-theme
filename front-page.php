@@ -6,25 +6,30 @@ get_header();
 
 <main>
 
-    <section class="top-section">
+    <section class="top-section content-container">
 
-        <div class="content-container">
+        <div class="top-section__content">
             
             <div class="top-section__text-content">
 
-                <h1>Õpeta lastele rahatarkust läbi mängu</h1>
+                <h1>Õpeta lastele <span class="text-accent">rahatarkust</span> läbi mängu</h1>
 
-                <p>
+                <p class="text-body-lg">
                     Rahamäng on lõbus ja hariv lasteraamat, mis õpetab väikestele rahatarkust, säästmist ja targat rahakasutust läbi põnevate lugude ja mängude.
                 </p>
 
-                <a href="" class="btn btn-primary">
-                    Osta raamat
-                </a>
+                <img class="top-section__image-mobile" src="<?php echo get_template_directory_uri(); ?>/assets/creatures.png" alt="">
 
-                <a href="" class="btn btn-secondary">
-                    Loe rohkem
-                </a>
+                <div class="buttons-container">
+                    <a href="" class="btn btn-primary">
+                        Osta raamat
+                    </a>
+    
+                    <a href="" class="btn btn-secondary">
+                        Loe rohkem
+                    </a>
+                </div>
+
 
             </div>
 
