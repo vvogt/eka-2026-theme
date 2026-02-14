@@ -13,8 +13,8 @@
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 body {
@@ -85,5 +85,17 @@ body a {
 
     &:hover {
         background-color: var(--primary-500);
+    }
+}
+
+
+/* Top section */
+.top-section {
+    .top-section__text-content {
+        max-width: 467px;
+    }
+
+    .top-section__image {
+        position: absolute;
     }
 }
