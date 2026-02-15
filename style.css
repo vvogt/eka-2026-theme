@@ -179,3 +179,27 @@ body a {
         margin-top: -35px;
     }
 }
+
+.top-section-alt {
+    display: flex;
+    gap: 30px;
+
+    .top-section-alt__text-content {
+        flex: 5;
+    }
+
+    .top-section-alt__image-container {
+        flex: 4;
+        border-radius: 999999px;
+        overflow: hidden;
+        aspect-ratio: 1.085;
+        position: relative;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

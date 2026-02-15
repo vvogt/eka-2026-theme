@@ -39,6 +39,24 @@ get_header();
 
     </section>
 
+    <section class="content-container top-section-alt">
+    
+        <div class="top-section-alt__text-content">
+            <h2>Meditsiiniabi ja hoolitsus Sinu koduses rahus</h2>
+            
+            <p class="text-body-lg">Medendi pakub professionaalset koduõendusteenust ja jalaravi Tallinnas, Viimsis ning Harjumaal. Oleme Tervisekassa ametlik lepingupartner.</p>
+            
+            <a href="" class="btn btn-primary">
+                Loe lähemalt
+            </a>
+        </div>
+
+        <div class="top-section-alt__image-container">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/chris-charles-XMXor5Bvj6U-unsplash.jpg" alt="">
+        </div>
+
+    </section>
+
 </main>
 
 <?php get_footer(); ?>
