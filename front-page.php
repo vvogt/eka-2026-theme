@@ -64,7 +64,7 @@ $front_page_intro = get_field('top_section_intro');
         
         <?php 
         $services = get_terms([
-            'taxonomy'   => 'service',
+            'taxonomy'   => 'teenus',
             'hide_empty' => false, // set true if you only want terms with posts assigned
         ]);
 
