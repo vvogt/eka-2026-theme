@@ -61,47 +61,41 @@ $front_page_intro = get_field('top_section_intro');
     </section>
 
     <section>
-        <?php
-            // The Query.
-            $the_query = new WP_Query(array('post_type' => 'service'));
+        
+        <?php 
+        $services = get_terms([
+            'taxonomy'   => 'service',
+            'hide_empty' => false, // set true if you only want terms with posts assigned
+        ]);
 
-            // The Loop.
-            if ( $the_query->have_posts() ) :
-        ?>
-            <div class="service-cards-container">
+        if ( ! empty( $services ) && ! is_wp_error( $services ) ) : ?>
+            <div class="services-list">
 
-                <?php
-                while ($the_query->have_posts()) :
-                    $the_query->the_post();
-
-                    $intro_text = get_field('intro_text');
-                    $features_list = get_field('features_list');
-                    $image = get_field('service_image');
-                    $icon = get_field('icon');
+                <?php foreach ( $services as $service ) : 
+                    $term_id     = $service->term_id;
+                    // ACF fields - pass 'term_ID' as the second argument
+                    $icon               = get_field( 'icon', 'term_' . $term_id );
+                    $intro_text         = get_field( 'intro_text', 'term_' . $term_id );
+                    $features_list      = get_field( 'features_list', 'term_' . $term_id );
+                    $service_image      = get_field( 'service_image', 'term_' . $term_id );
                 ?>
-                    <div class="service-card">
 
-                        <div class="service-image">
-                            <?php echo wp_get_attachment_image($image, 'medium'); ?>
+                    <a href="<?php echo esc_url(get_term_link($service)); ?>" class="service-card">
+                        <div class="service-image-container">
+                            <?php echo wp_get_attachment_image($service_image, 'medium'); ?>
                         </div>
-                    
-                        <h3><?php the_title(); ?></h3>
-                        <div class="service-description">
+                        <div class="service-intro">
                             <?php echo esc_html($intro_text); ?>
                         </div>
-                        <div class="features-list">
-                            <?php echo wp_kses_post($features_list); ?>
+                        <div class="service-features">
+                            <?php wp_kses_post($features_list); ?>
                         </div>
+                    </a>
 
-                    </div>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
+
             </div>
-
-            <?php else : ?>
-                <?php echo esc_html_e( 'Sorry, no posts matched your criteria.' ); ?>
-            <?php endif; ?>
-            
-        <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
 
     </section>
 
