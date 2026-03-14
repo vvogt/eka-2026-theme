@@ -203,3 +203,19 @@ body a {
         }
     }
 }
+
+.text-content {
+
+    p:first-child {
+        margin-top: 0;
+    }
+
+    p {
+        margin-top: 32px;
+    }
+
+    ul li {
+        list-style: disc;
+        color: red;
+    }
+}

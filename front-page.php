@@ -2,6 +2,9 @@
 
 get_header();
 
+$front_page_title = get_field('top_section_title');
+$front_page_intro = get_field('top_section_intro');
+
 ?>
 
 <main>
@@ -12,11 +15,11 @@ get_header();
             
             <div class="top-section__text-content">
 
-                <h1>Õpeta lastele <span class="text-accent">rahatarkust</span> läbi mängu</h1>
+                <h1><?php echo esc_html($front_page_title); ?></h1>
 
-                <p class="text-body-lg">
-                    Rahamäng on lõbus ja hariv lasteraamat, mis õpetab väikestele rahatarkust, säästmist ja targat rahakasutust läbi põnevate lugude ja mängude.
-                </p>
+                <div class="text-content">
+                    <?php echo wp_kses_post($front_page_intro); ?>
+                </div>
 
                 <img class="top-section__image-mobile" src="<?php echo get_template_directory_uri(); ?>/assets/creatures.png" alt="">
 
@@ -54,6 +57,51 @@ get_header();
         <div class="top-section-alt__image-container">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/chris-charles-XMXor5Bvj6U-unsplash.jpg" alt="">
         </div>
+
+    </section>
+
+    <section>
+        <?php
+            // The Query.
+            $the_query = new WP_Query(array('post_type' => 'service'));
+
+            // The Loop.
+            if ( $the_query->have_posts() ) :
+        ?>
+            <div class="service-cards-container">
+
+                <?php
+                while ($the_query->have_posts()) :
+                    $the_query->the_post();
+
+                    $intro_text = get_field('intro_text');
+                    $features_list = get_field('features_list');
+                    $image = get_field('service_image');
+                    $icon = get_field('icon');
+                ?>
+                    <div class="service-card">
+
+                        <div class="service-image">
+                            <?php echo wp_get_attachment_image($image, 'medium'); ?>
+                        </div>
+                    
+                        <h3><?php the_title(); ?></h3>
+                        <div class="service-description">
+                            <?php echo esc_html($intro_text); ?>
+                        </div>
+                        <div class="features-list">
+                            <?php echo wp_kses_post($features_list); ?>
+                        </div>
+
+                    </div>
+                <?php endwhile; ?>
+            </div>
+
+            <?php else : ?>
+                <?php echo esc_html_e( 'Sorry, no posts matched your criteria.' ); ?>
+            <?php endif; ?>
+            
+        <?php wp_reset_postdata(); ?>
 
     </section>
 
