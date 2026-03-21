@@ -9,3 +9,9 @@ add_action( 'admin_init', function() {
         remove_post_type_support( 'page', 'editor' );
     }
 } );
+
+add_theme_support( 'menus' );
+register_nav_menus( [
+    'primary' => __( 'Primary Menu' ),
+    'footer'  => __( 'Footer Menu' ),
+] );
