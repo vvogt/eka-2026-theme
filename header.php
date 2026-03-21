@@ -41,8 +41,38 @@
 
     </div>
 
-    <button class="menu-toggle">
-        Menüü
-    </button>
+    <div class="compact-menu-container">
+        <a class="compact-menu-logo" href="<?php echo get_home_url(); ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/medendi_logo.svg">
+        </a>
+        <button class="menu-toggle">
+            Menüü
+        </button>
+
+        <div class="compact-menu-content">
+            <ul>
+                <li>
+                    <a href="<?php echo get_home_url(); ?>">
+                        Avaleht
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo get_home_url(); ?>">
+                        blablabla
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo get_home_url(); ?>">
+                        klajsdlkjasdlj
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo get_home_url(); ?>">
+                        Avaleht
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 </header>

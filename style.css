@@ -237,12 +237,16 @@ body a {
     }
 }
 
-.menu-toggle {
+.compact-menu-container {
+    z-index: 100;
     position: fixed;
     top: 64px;
     left: 64px;
     transform: translateY(-200px);
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
+
+    max-height: 64px;
+    overflow: hidden;
 
     background-color: var(--primary-200);
     padding: 16px;
@@ -250,6 +254,23 @@ body a {
     border-radius: 4px;
 }
 
-.menu-toggle.visible {
+.compact-menu-container.active {
+    max-height: 600px;
+}
+
+.compact-menu-container.visible {
     transform: translateY(0);
+}
+
+.compact-menu-content {
+    ul {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        li {
+            list-style: none;
+        }
+    }
 }

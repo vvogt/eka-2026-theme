@@ -1,5 +1,11 @@
-const menuButton = document.querySelector('.menu-toggle');
+const menuContainer = document.querySelector('.compact-menu-container');
 
 setInterval(() => {
-    menuButton.classList.toggle('visible', window.scrollY > 105);
+    menuContainer.classList.toggle('visible', window.scrollY > 105);
 }, 100);
+
+const compactMenuToggle = document.querySelector('.menu-toggle');
+
+compactMenuToggle.addEventListener('click', () => {
+    menuContainer.classList.toggle('active');
+});
