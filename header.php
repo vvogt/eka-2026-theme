@@ -25,13 +25,13 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/medendi_logo.svg">
             </a>
 
-            <nav>
-                <ul class="top-bar-nav-menu">
-                    <li><a href="#">Teenused</a></li>
-                    <li><a href="#">Patsiendile</a></li>
-                    <li><a href="#">Meist</a></li>
-                </ul>
-            </nav>
+            <?php
+                wp_nav_menu([
+                    'theme_location' => 'primary',
+                    'container'      => 'nav',
+                    'container_class'=> 'main-nav',
+                ]);
+            ?>
 
             <a href="#" class="btn">
                 Võta ühendust
