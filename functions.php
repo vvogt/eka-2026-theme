@@ -10,6 +10,7 @@ add_action( 'admin_init', function() {
     }
 } );
 
+/* ENABLE APPEARANCE > MENUS */
 add_theme_support( 'menus' );
 register_nav_menus( [
     'primary' => __( 'Primary Menu' ),
