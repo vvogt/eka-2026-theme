@@ -1,5 +1,5 @@
-function menuButtonVisibilityHandler() {
-    console.log('menuButtonVisibilityHandler');
-}
+const menuButton = document.querySelector('.menu-toggle');
 
-menuButtonVisibilityHandler();
+setInterval(() => {
+    menuButton.classList.toggle('visible', window.scrollY > 105);
+}, 100);
