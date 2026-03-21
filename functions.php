@@ -16,3 +16,15 @@ register_nav_menus( [
     'primary' => __( 'Primary Menu' ),
     'footer'  => __( 'Footer Menu' ),
 ] );
+
+/* ENQUEUE SCRIPTS */
+function mytheme_enqueue_scripts() {
+    wp_enqueue_script(
+        'medendi-app',
+        get_template_directory_uri() . '/app.js',
+        [],
+        filemtime( get_template_directory() . '/app.js' ),
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_scripts' );
